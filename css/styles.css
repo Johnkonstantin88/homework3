@@ -14,6 +14,7 @@ light mode backgrounds #F4F4FD;
   --headers-color: #2e2f42;
   --accent-color: #404bbf;
   --links-color: #4d5ae5;
+  --light-mode-color: #F4F4FD;
 }
 
 body {
@@ -47,34 +48,79 @@ h1,h2,h3,h4,h5,h6,p {
   clip-path: inset(100%);
 }
 
-/* Site nav */
-
-.site-nav {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.auth-nav {
-  font-size: 16px;
-  font-style: normal;
-  line-height: 1.5;
-}
-
-/* Headers links colors*/
-
 .logo {
+  margin-right: 76px;
   color: #2e2f42;
   font-family: Raleway, sans-serif;
   letter-spacing: 0.03em;
   font-family: Raleway;
   font-size: 18px;
   line-height: 1.17;
+  
+}
+
+.logo-footer {
+  margin-right: 76px;
+  color: #F4F4FD;
+  font-family: Raleway, sans-serif;
+  letter-spacing: 0.03em;
+  font-family: Raleway;
+  font-size: 18px;
+  line-height: 1.17;
+
+}
+
+
+/* Site nav */
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  /* background-color: tomato; */
+   
+}
+
+.site-nav {
+  display: flex;
+  gap:40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* .site-nav .item:not(:last-child) {
+  margin-right: 40px;
+} */
+
+.auth-nav {
+  display: flex;
+  gap: 40px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.5;
+}
+.address{
+  margin-left: auto;
+}
+
+/* .auth-nav .item:not(:last-child) {
+  margin-right: 40px;
+} */
+
+
+/* Headers links colors*/
+
+.page-header {
+border-bottom: 1px solid #E7E9FC;
 }
 
 
 .site-nav .links {
+  display: block;
   color: var(--headers-color);
+  padding-top: 24px;
+  padding-bottom: 24px;
+ 
 }
 
 .auth-nav .links {
@@ -105,21 +151,7 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 
-.button {
-  border: 1px solid #E7E9FC;
-  border-radius: 4px;
-  padding: 12px 24px;
-  color: var(--links-color);
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-}
-
-/* Footer */
-
-.footer-text {
+.links {
   color: #f4f4fd;
   font-size: 16px;
   line-height: 1.5;
@@ -132,8 +164,13 @@ h1,h2,h3,h4,h5,h6,p {
 
 /* hover/focus */
 
-.links:hover,
-.links:focus {
+.header-link:hover,
+.header-link:focus {
+  color: var(--accent-color);
+}
+
+.button:hover,
+.button:focus {
   color: #ffffff;
   background-color: var(--accent-color);
 }
@@ -143,6 +180,7 @@ h1,h2,h3,h4,h5,h6,p {
 .hero-title {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   margin-top: 0;
   margin-bottom: 48px;
   max-width: 496px;
@@ -153,26 +191,86 @@ h1,h2,h3,h4,h5,h6,p {
   
 }
 
+.main-part {
+  padding-top: 188px;
+  padding-bottom: 188px;
+
+}
 /* H2 */
 
+.feature-list {
+  display: flex;
+  gap: 24px;
+}
+
+.feature-list-card{
+  width: calc((100% - 72px) / 4);
+}
+
+
 .second-header {
+  padding-top: 120px;
+  margin-bottom: 72px;
+  text-align: center;
   color: var(--headers-color);
   font-size: 36px;
   font-weight: 700;
   line-height: 1.1;
 }
 
+.team {
+  background-color: var(--light-mode-color);
+}
+
+
 /* H3 */
 
 .subtitle {
+  padding-top: 32px;
+  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
 }
 
+.description {
+  text-align: center;
+}
+
 /* H2 portfolio */
 
+.filter {
+  display: flex;
+  gap: 24px; 
+  justify-content: center;  
+  padding-top: 96px;
+  margin-bottom: 72px;
+ 
+}
+
+.button {
+  display: block;
+  border: 1px solid #E7E9FC;
+  border-radius: 4px;
+  padding: 12px 24px;
+  color: var(--links-color);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  
+}
+
 .second-header-portfolio {
+  padding-top: 32px;
+  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -181,6 +279,7 @@ h1,h2,h3,h4,h5,h6,p {
 /* P */
 
 .section-description {
+  padding-bottom: 32px;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -195,8 +294,22 @@ h1,h2,h3,h4,h5,h6,p {
 
 }
 
-.part {
-padding-top: 188px;
-padding-bottom: 188px;
+/* Footer */
+
+.page-footer {
+  background-color: #2E2F42;
   
+}
+
+.footer-logo {
+  display: block;
+  width: 264px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.footer-text {
+  color: #F4F4FD;
+  margin-top: 16px;
+  line-height: 1.5;
 }
